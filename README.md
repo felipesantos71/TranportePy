@@ -1,6 +1,6 @@
 # 🚚 TransportGuard - Sistema de Gerenciamento de Transportadora
 
-**Equipe:** Fabrício Bomfim, Marcus Vinnicius, Claudio Henrique, Bruno Santos  
+**Equipe:** Felipe Mateus, Fabrício Bomfim, igor Miranda, Caio Vinicius, Lucas Sena
 **Turma:** Desenvolvimento de Sistemas - Senai Dendezeiras  
 **Semestre:** 2025.1  
 
@@ -28,15 +28,12 @@ O sistema realiza o controle das principais operações da empresa, como:
 - **Caminhões**
 - **Funcionários**
 - **Clientes**
-
-### 📝 Registro de Saída de Caminhões
-
-Campos registrados:
-- Cliente
-- Tipo de carga
-- Destino
-- Horário de entrada e saída
-- Quilometragem inicial e final
+- **Contato**
+- **Endereço**
+- **Entrada_Saida**
+- **Manutenção**
+- **Produtos**
+- **Sensores**
 
 ### 🧠 Simulação de Sensores
 
@@ -84,7 +81,6 @@ Setores controlados:
 
 - O Python **envia caracteres via serial** para acender ou apagar luzes.
 - Exemplo de mapeamento:
-
 
 ---
 

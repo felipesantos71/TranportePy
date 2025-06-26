@@ -1,3 +1,10 @@
+"""
+Nome do arquivo: cria_arquivos_data.py
+Equipe: Felipe, Igor, Lucas Barbosa e Fabrício, Caio Vinicius
+Turma: 91164
+Semestre: 2025.1
+"""
+
 import os
 
 arquivos = [

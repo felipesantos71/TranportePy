@@ -1,10 +1,7 @@
 """
 Nome do arquivo: tela_cadastro.py
-
-Equipe:  Fabrício Bomfim, Felipe Mateus, Igor Santos,  Lucas Barbosa
-
+Equipe:  Fabrício Bomfim, Felipe Mateus, Igor Santos,  Lucas Barbosa, Caio Vinicius
 Turma: DB - 91164
-
 Semestre: 2025.1
 """
 

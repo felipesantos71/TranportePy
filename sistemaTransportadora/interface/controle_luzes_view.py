@@ -1,3 +1,10 @@
+"""
+Nome do arquivo: controle_luzes_view.py
+Equipe: Fabrício Bomfim, Felipe Mateus, Igor Santos, Lucas Barbosa, Caio Vinicius
+Turma: DB - 91164
+Semestre: 2025.1
+"""
+
 # controle_luzes_view.py
 from tkinter import *
 from tkinter import messagebox

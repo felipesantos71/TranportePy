@@ -1,6 +1,6 @@
 """
 Nome do arquivo: funcionario.py
-Equipe: Felipe, Igor, Lucas Barbosa e Fabrício
+Equipe: Felipe, Igor, Lucas Barbosa e Fabrício, Caio Vinicius
 Turma: 91164
 Semestre: 2025.1
 """

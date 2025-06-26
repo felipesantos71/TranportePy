@@ -1,6 +1,6 @@
 """
-Nome do arquivo: pecas_view.py
-Equipe:  Fabrício Bomfim, Felipe Mateus, Igor Santos,  Lucas Barbosa
+Nome do arquivo: entrada_saida_view.py
+Equipe:  Fabrício Bomfim, Felipe Mateus, Igor Santos,  Lucas Barbosa, Caio Vinicius
 Turma: DB - 91164
 Semestre: 2025.1
 """

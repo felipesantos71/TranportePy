@@ -1,6 +1,6 @@
 """
 Nome do arquivo: menu_inicial.py
-Equipe:  Fabrício Bomfim, Felipe Mateus, Igor Santos,  Lucas Barbosa
+Equipe:  Fabrício Bomfim, Felipe Mateus, Igor Santos,  Lucas Barbosa, Caio Vinicius
 Turma: DB - 91164
 Semestre: 2025.1
 """
@@ -56,7 +56,7 @@ modulos_por_tipo = {
 
 def abrir_menu_inicial(tipo_usuario):
     menu_inicial = Tk()
-    menu_inicial.title(f"GestorTrans - Menu Inicial ({tipo_usuario})")
+    menu_inicial.title(f"TransportGuard - Menu Inicial ({tipo_usuario})")
     menu_inicial.geometry("700x600+400+50")
     menu_inicial.configure(bg=COR_FUNDO)
 

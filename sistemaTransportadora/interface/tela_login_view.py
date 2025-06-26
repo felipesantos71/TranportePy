@@ -1,6 +1,6 @@
 """
 Nome do arquivo: tela_login_view.py
-Equipe:  Fabrício Bomfim, Felipe Mateus, Igor Santos,  Lucas Barbosa
+Equipe:  Fabrício Bomfim, Felipe Mateus, Igor Santos,  Lucas Barbosa, Caio Vinicius
 Turma: DB - 91164
 Semestre: 2025.1
 """
@@ -47,7 +47,7 @@ def abrir_tela_login():
         abrir_tela_cadastro()
 
     login = Tk()
-    login.title("Login - GestorTrans")
+    login.title("Login - TransportGuard")
     login.geometry("350x250")
     login.configure(bg="#f4f4f4")
 
