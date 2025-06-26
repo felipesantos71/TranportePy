@@ -49,13 +49,7 @@ O sistema realiza o controle das principais operações da empresa, como:
 
 ### 💡 Controle Manual de Iluminação (via interface)
 
-Setores controlados:
-- Oficina  
-- Galpão (3 blocos)  
-- Escritório  
-- Corredor  
-- Área de serviço  
-- Área externa  
+- **Geral**
 
 ---
 
@@ -63,14 +57,12 @@ Setores controlados:
 
 - **Python 3**
 - **Tkinter** (interface gráfica)
-- **Arduino Uno/Mega** (simulado no Tinkercad)
-- **Sensores:** presença (ou distância), temperatura, luminosidade, gás
+- **Arduino Uno** (simulado no Tinkercad)
+- **Sensores:** presença (ou distância), temperatura, luminosidade
 - **Armazenamento:** arquivos `.txt` (simulando tabelas)
 - **Comunicação Serial** (Python ↔ Arduino)
 
 ---
-
-## 📡 Comunicação Serial Python ↔ Arduino
 
 ### 🔍 Sensores
 
@@ -99,13 +91,12 @@ Setores controlados:
 ### 🔧 Sensores
 
 **Nome do Projeto:** `AVALIAÇÃO FINAL IOT (PROJETO SENSORES)`  
-[Simulação - Sensor de Distância (Ultrassônico)](https://www.tinkercad.com/things/95vdITbEQFX-fernando-moreira-sensor-distancia?sharecode=yMGtEjZ1vxqIZ-p3Rmo0qI7lg7hlCRnBpwafPM4R-7Q)
+[Simulação - Sensor de Distância (Ultrassônico)](https://www.tinkercad.com/things/l9vRvXeZkBr-felipe-igor-lucas-barbosa-e-fabricio/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fclassrooms%2F1ffMbI9s7y7%2Factivities%2F7hqnxppF0K3%3Ftype%3Dcircuits%23filter-by-type)
 
 ### 💡 Controle de Luzes
 
 **Nome do Projeto:** `AVALIAÇÃO FINAL IOT (PROJETO LÂMPADAS)`  
-[Simulação - Controle Serial com Python](https://www.tinkercad.com/things/diOGfZNg5bt-comunicacao-serial-fernando?sharecode=m74cmOU-bVf3Ky7-_ZetpQrNyFXnoYgcTmHhoIITHoM)
-
+[Simulação - Controle Serial com Python](https://www.tinkercad.com/things/a8pZcxTmq15-felipe-igor-lucas-barbosa-e-fabricio/editel?returnTo=%2Fthings%2Fa8pZcxTmq15-felipe-igor-lucas-barbosa-e-fabricio)
 
 ---
 
