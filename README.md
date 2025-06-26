@@ -100,17 +100,6 @@ O sistema realiza o controle das principais operações da empresa, como:
 
 ---
 
-## 📘 Documentação de Falhas (caso necessário)
-
-Caso algum requisito não seja implementado, será entregue um arquivo `.txt` contendo:
-
-- Requisito não cumprido  
-- Tentativas realizadas  
-- Dificuldades enfrentadas  
-- Possível solução (e por que não foi implementada)
-
----
-
 ## ✅ Conclusão
 
 O projeto **TransportGuard** visa entregar uma solução robusta, intuitiva e funcional para a gestão de uma transportadora, aliando:
@@ -124,5 +113,3 @@ O projeto **TransportGuard** visa entregar uma solução robusta, intuitiva e fu
 Com isso, demonstramos domínio das competências em **programação, automação e integração IoT**, conforme proposto pela disciplina.
 
 ---
-
-
