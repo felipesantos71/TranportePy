@@ -106,6 +106,7 @@ Setores controlados:
 **Nome do Projeto:** `AVALIAÇÃO FINAL IOT (PROJETO LÂMPADAS)`  
 [Simulação - Controle Serial com Python](https://www.tinkercad.com/things/diOGfZNg5bt-comunicacao-serial-fernando?sharecode=m74cmOU-bVf3Ky7-_ZetpQrNyFXnoYgcTmHhoIITHoM)
 
+
 ---
 
 ## 📘 Documentação de Falhas (caso necessário)
@@ -121,7 +122,7 @@ Caso algum requisito não seja implementado, será entregue um arquivo `.txt` co
 
 ## ✅ Conclusão
 
-O projeto **TransGuard** visa entregar uma solução robusta, intuitiva e funcional para a gestão de uma transportadora, aliando:
+O projeto **TransportGuard** visa entregar uma solução robusta, intuitiva e funcional para a gestão de uma transportadora, aliando:
 
 - Controle operacional e logístico
 - Monitoramento inteligente de ambientes
