@@ -1,14 +1,14 @@
 # 🚚 TransportGuard - Sistema de Gerenciamento de Transportadora
 
 **Equipe:** Felipe Mateus, Fabrício Bomfim, igor Miranda, Caio Vinicius, Lucas Sena
-**Turma:** Desenvolvimento de Sistemas - Senai Dendezeiras  
+**Turma:** Desenvolvimento de Sistemas - Senai Dendezeiras - 91164
 **Semestre:** 2025.1  
 
 ---
 
 ## 📋 Descrição do Projeto
 
-**TransGuard** é um sistema completo de gerenciamento para uma transportadora, desenvolvido como projeto final da disciplina de **Internet das Coisas (IoT)**.  
+**TransportGuard** é um sistema completo de gerenciamento para uma transportadora, desenvolvido como projeto final da disciplina de **Internet das Coisas (IoT)**.  
 O sistema realiza o controle das principais operações da empresa, como:
 
 - Manutenção da frota
@@ -37,7 +37,7 @@ O sistema realiza o controle das principais operações da empresa, como:
 
 ### 🧠 Simulação de Sensores
 
-- Sensor de **presença** (ultrassônico, se necessário)
+- Sensor de **presença**
 - Sensor de **temperatura**
 - Sensor de **luminosidade**
 
