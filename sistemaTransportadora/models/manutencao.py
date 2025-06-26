@@ -14,17 +14,16 @@ class Manutencao:
         self.mecanico = id_funcionario
         self.servico = servico
         self.pecas = id_produtos
-        self.caminho_arquivo = "PROJETO-IOT/data/manutencao.txt"
-    
+        self.caminho_arquivo = "data/manutencao.txt"
+
     def __str__(self):
-        return (f"ID: {self.id_manutencao}, Data de Ingresso: {self.data_ingresso}, "
-                f"Data de Saída: {self.data_saida}, Caminhão: {self.caminhao}, "
-                f"Mecânico: {self.mecanico}, Serviço: {self.servico}, Peças: {self.pecas}")
-    
+        return (f"ID: {self.id_manutencao}, Ingresso: {self.data_ingresso}, Saída: {self.data_saida}, "
+                f"Caminhão: {self.caminhao}, Mecânico: {self.mecanico}, Serviço: {self.servico}, Peças: {self.pecas}")
+
     def to_line(self):
         return (f"{self.id_manutencao},{self.data_ingresso},{self.data_saida},"
                 f"{self.caminhao},{self.mecanico},{self.servico},{self.pecas}\n")
-    
+
     # CRUD
 
     # Create
@@ -34,12 +33,15 @@ class Manutencao:
 
     # Read
     def buscar_manutencao(self, id_manutencao):
-        with open(self.caminho_arquivo, "r") as arquivo:
-            for linha in arquivo:
-                if linha.startswith(f"{id_manutencao},"):
-                    return linha.strip()
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                for linha in arquivo:
+                    if linha.startswith(f"{id_manutencao},"):
+                        return linha.strip()
+        except FileNotFoundError:
+            return None
         return None
-    
+
     # Update
     def atualizar_manutencao(self, id_manutencao):
         manutencoes = self.listar_manutencoes()
@@ -49,7 +51,7 @@ class Manutencao:
                     arquivo.write(self.to_line())
                 else:
                     arquivo.write(manutencao)
-    
+
     # Delete
     def excluir_manutencao(self, id_manutencao):
         manutencoes = self.listar_manutencoes()
@@ -57,4 +59,12 @@ class Manutencao:
             for manutencao in manutencoes:
                 if not manutencao.startswith(f"{id_manutencao},"):
                     arquivo.write(manutencao)
+
+    # Listar todos
+    def listar_manutencoes(self):
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                return arquivo.readlines()
+        except FileNotFoundError:
+            return []
 

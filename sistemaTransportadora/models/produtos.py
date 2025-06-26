@@ -13,8 +13,7 @@ class Produtos:
         self.quantidade = quantidade
         self.validade = validade
         self.observacoes = observacoes
-        self.caminho_arquivo = "PROJETO-IOT/data/produtos.txt"
-
+        self.caminho_arquivo = "data/produtos.txt"
 
     def __str__(self):
         return (f"ID: {self.id_produto}, Descrição: {self.descricao}, Tipo: {self.tipo}, "
@@ -23,7 +22,7 @@ class Produtos:
     def to_line(self):
         return (f"{self.id_produto},{self.descricao},{self.tipo},{self.quantidade},"
                 f"{self.validade},{self.observacoes}\n")
-    
+
     # CRUD
 
     # Create
@@ -33,12 +32,15 @@ class Produtos:
 
     # Read
     def buscar_produto(self, id_produto):
-        with open(self.caminho_arquivo, "r") as arquivo:
-            for linha in arquivo:
-                if linha.startswith(f"{id_produto},"):
-                    return linha.strip()
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                for linha in arquivo:
+                    if linha.startswith(f"{id_produto},"):
+                        return linha.strip()
+        except FileNotFoundError:
+            return None
         return None
-        
+
     # Update
     def atualizar_produto(self, id_produto):
         produtos = self.listar_produtos()
@@ -48,3 +50,19 @@ class Produtos:
                     arquivo.write(self.to_line())
                 else:
                     arquivo.write(produto)
+
+    # Delete
+    def excluir_produto(self, id_produto):
+        produtos = self.listar_produtos()
+        with open(self.caminho_arquivo, "w") as arquivo:
+            for produto in produtos:
+                if not produto.startswith(f"{id_produto},"):
+                    arquivo.write(produto)
+
+    # Listar todos
+    def listar_produtos(self):
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                return arquivo.readlines()
+        except FileNotFoundError:
+            return []

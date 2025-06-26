@@ -17,17 +17,17 @@ class Caminhao:
         self.status = status
         self.tipo = tipo
         self.peso = peso
-        self.caminho_arquivo = "PROJETO-IOT/data/caminhao.txt"
+        self.caminho_arquivo = "data/caminhao.txt"
 
     def __str__(self):
-        return (f"ID: {self.id_caminhao}, Renavam: {self.renavan}, Modelo: {self.modelo}, "
-                f"Marca: {self.marca}, Cor: {self.cor}, Placa: {self.placa}, Chassi: {self.chassi}, "
-                f"Status: {self.status}, Tipo: {self.tipo}, Peso: {self.peso}")
-    
+        return (f"ID: {self.id_caminhao}, Renavan: {self.renavan}, Modelo: {self.modelo}, Marca: {self.marca}, "
+                f"Cor: {self.cor}, Placa: {self.placa}, Chassi: {self.chassi}, Status: {self.status}, "
+                f"Tipo: {self.tipo}, Peso: {self.peso}")
+
     def to_line(self):
         return (f"{self.id_caminhao},{self.renavan},{self.modelo},{self.marca},{self.cor},"
                 f"{self.placa},{self.chassi},{self.status},{self.tipo},{self.peso}\n")
-    
+
     # CRUD
 
     # Create
@@ -37,12 +37,15 @@ class Caminhao:
 
     # Read
     def buscar_caminhao(self, id_caminhao):
-        with open(self.caminho_arquivo, "r") as arquivo:
-            for linha in arquivo:
-                if linha.startswith(f"{id_caminhao},"):
-                    return linha.strip()
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                for linha in arquivo:
+                    if linha.startswith(f"{id_caminhao},"):
+                        return linha.strip()
+        except FileNotFoundError:
+            return None
         return None
-        
+
     # Update
     def atualizar_caminhao(self, id_caminhao):
         caminhoes = self.listar_caminhoes()
@@ -52,3 +55,19 @@ class Caminhao:
                     arquivo.write(self.to_line())
                 else:
                     arquivo.write(caminhao)
+
+    # Delete
+    def excluir_caminhao(self, id_caminhao):
+        caminhoes = self.listar_caminhoes()
+        with open(self.caminho_arquivo, "w") as arquivo:
+            for caminhao in caminhoes:
+                if not caminhao.startswith(f"{id_caminhao},"):
+                    arquivo.write(caminhao)
+
+    # Listar todos
+    def listar_caminhoes(self):
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                return arquivo.readlines()
+        except FileNotFoundError:
+            return []

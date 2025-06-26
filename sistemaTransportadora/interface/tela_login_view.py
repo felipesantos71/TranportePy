@@ -8,10 +8,10 @@ Semestre: 2025.1
 from tkinter import *
 from tkinter import messagebox
 import os
-from tela_cadastro import abrir_tela_cadastro
-from menu_inicial import abrir_menu_inicial  # menu_inicial.py deve ter a função abrir_menu_inicial(tipo_usuario)
+from interface.tela_cadastro import abrir_tela_cadastro
+from interface.menu_inicial import abrir_menu_inicial  # menu_inicial.py deve ter a função abrir_menu_inicial(tipo_usuario)
 
-ARQUIVO_USUARIOS = "usuarios.txt"
+ARQUIVO_USUARIOS = "data/usuarios.txt"
 
 def verificar_credenciais(usuario, senha):
     if os.path.exists(ARQUIVO_USUARIOS):

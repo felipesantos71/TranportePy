@@ -19,19 +19,19 @@ class Entrada_Saida:
         self.km_chegada = km_chegada
         self.id_caminhao = id_caminhao
         self.motorista = id_funcionario
-        self.caminho_arquivo = "PROJETO-IOT/data/entrada_saida.txt"
+        self.caminho_arquivo = "data/entrada.saida.txt"
 
     def __str__(self):
-        return (f"ID: {self.id_entrada_saida}, Data Entrada: {self.data_entrada}, Data Saída: {self.data_saida}, "
-                f"Hora Entrada: {self.hora_entrada}, Hora Saída: {self.hora_saida}, Destino: {self.destino}, "
-                f"Roteiro: {self.roteiro}, Peso: {self.peso}, KM Saída: {self.km_saida}, "
-                f"KM Chegada: {self.km_chegada}, ID Caminhão: {self.id_caminhao}, ID Funcionário: {self.motorista}")
-    
+        return (f"ID: {self.id_entrada_saida}, Entrada: {self.data_entrada} {self.hora_entrada}, "
+                f"Saída: {self.data_saida} {self.hora_saida}, Destino: {self.destino}, Roteiro: {self.roteiro}, "
+                f"Peso: {self.peso}, KM Saída: {self.km_saida}, KM Chegada: {self.km_chegada}, "
+                f"Caminhão: {self.id_caminhao}, Motorista: {self.motorista}")
+
     def to_line(self):
         return (f"{self.id_entrada_saida},{self.data_entrada},{self.data_saida},{self.hora_entrada},"
                 f"{self.hora_saida},{self.destino},{self.roteiro},{self.peso},{self.km_saida},"
                 f"{self.km_chegada},{self.id_caminhao},{self.motorista}\n")
-    
+
     # CRUD
 
     # Create
@@ -41,12 +41,15 @@ class Entrada_Saida:
 
     # Read
     def buscar_entrada_saida(self, id_entrada_saida):
-        with open(self.caminho_arquivo, "r") as arquivo:
-            for linha in arquivo:
-                if linha.startswith(f"{id_entrada_saida},"):
-                    return linha.strip()
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                for linha in arquivo:
+                    if linha.startswith(f"{id_entrada_saida},"):
+                        return linha.strip()
+        except FileNotFoundError:
+            return None
         return None
-        
+
     # Update
     def atualizar_entrada_saida(self, id_entrada_saida):
         entradas_saidas = self.listar_entradas_saidas()
@@ -64,3 +67,11 @@ class Entrada_Saida:
             for entrada_saida in entradas_saidas:
                 if not entrada_saida.startswith(f"{id_entrada_saida},"):
                     arquivo.write(entrada_saida)
+
+    # Listar todos
+    def listar_entradas_saidas(self):
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                return arquivo.readlines()
+        except FileNotFoundError:
+            return []

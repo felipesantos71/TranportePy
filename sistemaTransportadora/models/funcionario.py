@@ -12,47 +12,57 @@ class Funcionario:
         self.cpf = cpf
         self.cargo = cargo
         self.dta_nascimento = dta_nascimento
-        self.endereco = id_endereco
-        self.contato = id_contato
-        self.caminho_arquivo = "PROJETO-IOT/data/funcionario.txt"
+        self.id_endereco = id_endereco
+        self.id_contato = id_contato
+        self.caminho_arquivo = "data/funcionario.txt"
 
-def __str__(self):
-    return (f"ID: {self.id_funcionario}, Nome: {self.nome}, CPF: {self.cpf}, RG: {self.rg}, "
-            f"Cargo: {self.cargo}, Salário: {self.salario}, ID Endereço: {self.id_endereco}, "
-            "ID Contato: {self.id_contato}")
+    def __str__(self):
+        return (f"ID: {self.id_funcionario}, Nome: {self.nome}, CPF: {self.cpf}, Cargo: {self.cargo}, "
+                f"Data Nascimento: {self.dta_nascimento}, ID Endereço: {self.id_endereco}, ID Contato: {self.id_contato}")
 
-def to_line(self):
-    return f"{self.id_funcionario},{self.nome},{self.cpf},{self.rg},{self.cargo},{self.salario},{self.id_endereco},{self.id_contato}\n"
+    def to_line(self):
+        return f"{self.id_funcionario},{self.nome},{self.cpf},{self.cargo},{self.dta_nascimento},{self.id_endereco},{self.id_contato}\n"
 
-# CRUD
+    # CRUD
 
-# Create
-def inserir_funcionario(self):
-    with open(self.caminho_arquivo, "a") as arquivo:
-        arquivo.write(self.to_line())
+    # Create
+    def inserir_funcionario(self):
+        with open(self.caminho_arquivo, "a") as arquivo:
+            arquivo.write(self.to_line())
 
-# Read
-def buscar_funcionario(self, id_funcionario):
-    with open(self.caminho_arquivo, "r") as arquivo:
-        for linha in arquivo:
-            if linha.startswith(f"{id_funcionario},"):
-                return linha.strip()
-    return None
+    # Read
+    def buscar_funcionario(self, id_funcionario):
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                for linha in arquivo:
+                    if linha.startswith(f"{id_funcionario},"):
+                        return linha.strip()
+        except FileNotFoundError:
+            return None
+        return None
 
-# Update
-def atualizar_funcionario(self, id_funcionario):
-    funcionarios = self.listar_funcionarios()
-    with open(self.caminho_arquivo, "w") as arquivo:
-        for funcionario in funcionarios:
-            if funcionario.startswith(f"{id_funcionario},"):
-                arquivo.write(self.to_line())
-            else:
-                arquivo.write(funcionario)
+    # Update
+    def atualizar_funcionario(self, id_funcionario):
+        funcionarios = self.listar_funcionarios()
+        with open(self.caminho_arquivo, "w") as arquivo:
+            for funcionario in funcionarios:
+                if funcionario.startswith(f"{id_funcionario},"):
+                    arquivo.write(self.to_line())
+                else:
+                    arquivo.write(funcionario)
 
-# Delete
-def excluir_funcionario(self, id_funcionario):
-    funcionarios = self.listar_funcionarios()
-    with open(self.caminho_arquivo, "w") as arquivo:
-        for funcionario in funcionarios:
-            if not funcionario.startswith(f"{id_funcionario},"):
-                arquivo.write(funcionario)
+    # Delete
+    def excluir_funcionario(self, id_funcionario):
+        funcionarios = self.listar_funcionarios()
+        with open(self.caminho_arquivo, "w") as arquivo:
+            for funcionario in funcionarios:
+                if not funcionario.startswith(f"{id_funcionario},"):
+                    arquivo.write(funcionario)
+
+    # Listar todos
+    def listar_funcionarios(self):
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                return arquivo.readlines()
+        except FileNotFoundError:
+            return []

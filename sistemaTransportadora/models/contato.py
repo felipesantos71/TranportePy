@@ -11,31 +11,33 @@ class Contato:
         self.telefone = telefone
         self.celular = celular
         self.email = email
-        self.caminho_arquivo = "PROJETO-IOT/data/contato.txt"
-    
+        self.caminho_arquivo = "data/contato.txt"
 
     def __str__(self):
         return f"ID: {self.id_contato}, Telefone: {self.telefone}, Celular: {self.celular}, Email: {self.email}"
     
     def to_line(self):
         return f"{self.id_contato},{self.telefone},{self.celular},{self.email}\n"
-    
-    #CRUD
-    
-    #Create
+
+    # CRUD
+
+    # Create
     def inserir_contato(self):
         with open(self.caminho_arquivo, "a") as arquivo:
             arquivo.write(self.to_line())
 
-    #Read
+    # Read
     def buscar_contato(self, id_contato):
-        with open(self.caminho_arquivo, "r") as arquivo:
-            for linha in arquivo:
-                if linha.startswith(f"{id_contato},"):
-                    return linha.strip()
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                for linha in arquivo:
+                    if linha.startswith(f"{id_contato},"):
+                        return linha.strip()
+        except FileNotFoundError:
+            return None
         return None
 
-    #Update
+    # Update
     def atualizar_contato(self, id_contato):
         contatos = self.listar_contatos()
         with open(self.caminho_arquivo, "w") as arquivo:
@@ -44,13 +46,20 @@ class Contato:
                     arquivo.write(self.to_line())
                 else:
                     arquivo.write(contato)
-    
-    #Delete
+
+    # Delete
     def excluir_contato(self, id_contato):
-        contatos= self.listar_contatos()
+        contatos = self.listar_contatos()
         with open(self.caminho_arquivo, 'w') as arquivo:
             for contato in contatos:
                 if not contato.startswith(f"{id_contato},"):
                     arquivo.write(contato)
 
-        
+    # Listar todos
+    def listar_contatos(self):
+        try:
+            with open(self.caminho_arquivo, "r") as arquivo:
+                return arquivo.readlines()
+        except FileNotFoundError:
+            return []
+

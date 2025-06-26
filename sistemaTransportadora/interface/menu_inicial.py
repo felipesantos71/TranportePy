@@ -8,17 +8,17 @@ Semestre: 2025.1
 from tkinter import *
 from tkinter import messagebox
 
-from funcionarios_view import abrir_tela_funcionarios
-from clientes_view import abrir_clientes
-from fornecedores_view import abrir_tela_fornecedores
-from caminhoes_view import abrir_tela_caminhoes
-from manutencao_view import abrir_tela_manutencao
-from sensores_view import abrir_tela_sensores
-from controle_luzes_view import abrir_tela_controle_luzes
-from endereco_view import abrir_tela_endereco
-from contato_view import abrir_tela_contato
-from entrada_saida_view import abrir_tela_entrada_saida
-from produtos_view import abrir_tela_produtos
+from interface.funcionarios_view import abrir_tela_funcionarios
+from interface.clientes_view import abrir_clientes
+from interface.fornecedores_view import abrir_tela_fornecedores
+from interface.caminhoes_view import abrir_tela_caminhoes
+from interface.manutencao_view import abrir_tela_manutencao
+from interface.sensores_view import abrir_tela_sensores
+from interface.controle_luzes_view import abrir_tela_controle_luzes
+from interface.endereco_view import abrir_tela_enderecos
+from interface.contato_view import abrir_tela_contatos
+from interface.entrada_saida_view import abrir_tela_entrada_saida
+from interface.produtos_view import abrir_tela_produtos
 
 COR_FUNDO = "#f4f4f4"
 COR_BOTAO = "#4682B4"
