@@ -78,9 +78,9 @@ def abrir_menu_inicial(tipo_usuario):
         elif nome == "Controle Manual de Luzes":
             abrir_tela_controle_luzes()
         elif nome == "Endereços":
-            abrir_tela_endereco()
+            abrir_tela_enderecos()  
         elif nome == "Contatos":
-            abrir_tela_contato()
+            abrir_tela_contatos()   
         elif nome == "Produtos":
             abrir_tela_produtos()
         else:
