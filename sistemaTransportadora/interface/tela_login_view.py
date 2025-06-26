@@ -14,12 +14,19 @@ from interface.menu_inicial import abrir_menu_inicial  # menu_inicial.py deve te
 ARQUIVO_USUARIOS = "data/usuarios.txt"
 
 def verificar_credenciais(usuario, senha):
-    if os.path.exists(ARQUIVO_USUARIOS):
-        with open(ARQUIVO_USUARIOS, "r") as f:
-            for linha in f:
-                dados = linha.strip().split(";")
-                if len(dados) == 3 and usuario == dados[0] and senha == dados[1]:
-                    return dados[2]  # tipo de usuário
+    print(f"Tentando login: '{usuario}' senha: '{senha}'")
+    if not os.path.exists(ARQUIVO_USUARIOS):
+        print("Arquivo de usuários não encontrado!")
+        return None
+    with open(ARQUIVO_USUARIOS, "r") as arquivo:
+        for linha in arquivo:
+            print(f"Linha lida: '{linha.strip()}'")
+            dados = linha.strip().split(";")
+            print(f"Dados splitados: {dados}")
+            if len(dados) == 3 and usuario == dados[0] and senha == dados[1]:
+                print("Login OK!")
+                return dados[2]
+    print("Login inválido!")
     return None
 
 def abrir_tela_login():

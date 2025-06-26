@@ -1,1 +1,4 @@
-admin,senha123,ADM
+carla@gmail.com;123;ADM GERAL
+fernando@gmail.com;123;ADM OFICINA
+jose@gmail.com;123;ADM
+igor@gmail.com;123;ADM OFICINA

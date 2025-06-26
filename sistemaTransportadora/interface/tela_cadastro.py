@@ -12,7 +12,7 @@ from tkinter import *
 from tkinter import messagebox
 import os
 
-ARQUIVO_USUARIOS = "usuarios.txt"
+ARQUIVO_USUARIOS = "data/usuarios.txt"
 
 def cadastrar_usuario(nome, senha, tipo):
     if os.path.exists(ARQUIVO_USUARIOS):
@@ -46,15 +46,15 @@ def cadastrar():
     if cadastrar_usuario(usuario, senha, tipo):
         messagebox.showinfo("Sucesso", "Usuário cadastrado com sucesso!")
         janela_cadastro.destroy()
-        import tela_login_view
-        tela_login_view.abrir_tela_login()
+        from interface.tela_login_view import abrir_tela_login
+        abrir_tela_login()
     else:
         messagebox.showerror("Erro", "Usuário já existe!")
 
 def voltar_login():
     janela_cadastro.destroy()
-    import tela_login_view
-    tela_login_view.abrir_tela_login()
+    from interface.tela_login_view import abrir_tela_login
+    abrir_tela_login()
 
 def abrir_tela_cadastro():
     global janela_cadastro, entrada_usuario, entrada_senha, entrada_confirmar, tipo_var
